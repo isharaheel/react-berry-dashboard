@@ -1,0 +1,391 @@
+import { Breadcrumbs, Divider, MenuItem, Pagination, Select, styled, TextField, Typography, Box, Card, Avatar, Button, Chip, Grid } from "@mui/material";
+import React, { useState } from "react";
+import { IoHome } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import { FaSquareFacebook, FaLinkedin, FaTwitterSquare } from "react-icons/fa6";
+
+// ======================== USERS ========================
+export const users = [
+  {
+    name: "Perry",
+    role: "Direct Implementation Developer",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/follow-2.png",
+    cover: "/images/style-1.png",
+  },
+  {
+    name: "Jennyfer",
+    role: "Lead Intranet Planner",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/follow-1.png",
+    cover: "/images/style-2.png",
+  },
+  {
+    name: "Antonette",
+    role: "Regional Division Administrator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/follow-6.png",
+    cover: "/images/style-3.png",
+  },
+  {
+    name: "Mekhi",
+    role: "Central Brand Coordinator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/socialImg-7.png",
+    cover: "/images/style-4.png",
+  },
+  {
+    name: "Margie",
+    role: "Product Tactics Facilitator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/socialImg-6.png",
+    cover: "/images/style-5.png",
+  },
+  {
+    name: "Wilfrid",
+    role: "Lead Directives Analyst",
+    status: "Rejected",
+    statusColor: "#dc2626",
+    statusBg: "#fee2e2",
+    avatar: "/images/follow-3.png",
+    cover: "/images/gallery-12.png",
+  },
+  {
+    name: "Kennedy",
+    role: "Principal Marketing Administrator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/socialImg-5.png",
+    cover: "/images/style-6.png",
+  },
+  {
+    name: "Ida",
+    role: "Direct Assurance Administrator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/socialImg-7.png",
+    cover: "/images/style-7.png",
+  },
+   {
+    name: "Madyson",
+    role: "Direct Assurance Administrator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/follow-5.png",
+    cover: "/images/style-8.png",
+  },
+   {
+    name: "Murphy",
+    role: "Direct Assurance Administrator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/follow-6.png",
+    cover: "/images/style-9.png",
+  },
+   {
+    name: "Lucie",
+    role: "Direct Assurance Administrator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/socialImg-5.png",
+    cover: "/images/style-10.png",
+  },
+   {
+    name: "Sonny",
+    role: "Direct Assurance Administrator",
+    status: "Active",
+    statusColor: "#16a34a",
+    statusBg: "#dcfce7",
+    avatar: "/images/u8.jpg",
+    cover: "/images/style-11.png",
+  },
+];
+
+// ======================== STYLED COMPONENTS ========================
+export const Main = styled("div")(() => ({
+  width: "100%",
+  maxWidth: "1200px",
+  margin: "0 auto",
+  padding: "16px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "20px",
+  boxSizing: "border-box",
+}));
+
+export const SectionOne = styled("div")(() => ({
+  width: "100%",
+  height: "35px",
+  padding: "0 16px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  borderRadius: "8px",
+  background: "white",
+}));
+
+function handleClick(event) {
+  event.preventDefault();
+  console.info("You clicked a breadcrumb.");
+}
+
+// ======================== COMPONENT ========================
+export default function StyleThree() {
+  const [search, setSearch] = useState("");
+
+  const filtered = users.filter((u) =>
+    u.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <Main>
+      {/* Header / Breadcrumb */}
+      <SectionOne>
+        <Typography sx={{ fontWeight: 600 }}>Style 03</Typography>
+        <div role="presentation" onClick={handleClick}>
+          <Breadcrumbs aria-label="breadcrumb" separator="›">
+            <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+              <IoHome />
+            </Link>
+            <Typography sx={{ color: "inherit", fontSize: "13px" }}>
+              Cards
+            </Typography>
+            <Typography sx={{ color: "inherit", fontSize: "13px" }}>
+              Style 03
+            </Typography>
+          </Breadcrumbs>
+        </div>
+      </SectionOne>
+
+      {/* Cards Container */}
+      <Box
+        sx={{
+          padding: 3,
+          background: "white",
+          borderRadius: "10px",
+          width: "100%",
+        }}
+      >
+        {/* Search */}
+        <Box
+          sx={{
+            mb: 3,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: 2,
+          }}
+        >
+          <Typography sx={{ fontWeight: "bold" }}>Cards</Typography>
+          <TextField
+            placeholder="Search"
+            size="small"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            sx={{ minWidth: "200px", flex: 1 }}
+          />
+        </Box>
+
+        <Divider sx={{ mb: 3 }} />
+
+        {/* Grid Cards */}
+        <Grid container spacing={3}>
+          {filtered.map((user, i) => (
+            <Grid
+              item
+              key={i}
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <Card
+                sx={{
+                  borderRadius: 2,
+                  overflow: "hidden",
+                  width: "100%",
+                  maxWidth: "260px",
+                  height: "auto",
+                  transition: "all 0.25s ease",
+                  border: "1px solid #e5e7eb",
+                  "&:hover": {
+                    border: "1px solid rgb(30,136,229)",
+                  },
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {/* Cover Image */}
+                <Box
+                  sx={{
+                    height: 120,
+                    backgroundImage: `url(${user.cover})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+
+                {/* Avatar */}
+                <Avatar
+                  src={user.avatar}
+                  sx={{
+                    width: 72,
+                    height: 72,
+                    border: "4px solid white",
+                    margin: "-36px auto 0",
+                  }}
+                />
+
+                {/* Content */}
+                <Box sx={{ textAlign: "center", p: 2, flex: 1, display: "flex", flexDirection: "column" }}>
+                  <Typography fontWeight={600}>{user.name}</Typography>
+                  <Typography fontSize="13px" color="text.secondary">
+                    {user.role}
+                  </Typography>
+
+                  <Chip
+                    label={user.status}
+                    sx={{
+                      mt: 1,
+                      height: 22,
+                      fontSize: "12px",
+                      backgroundColor: user.statusBg,
+                      color: user.statusColor,
+                      fontWeight: 500,
+                    }}
+                  />
+
+                  {/* Social Buttons */}
+                  <Box
+                    sx={{
+                      mt: 2,
+                      display: "flex",
+                      gap: 1,
+                      flexWrap: "wrap",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      sx={{
+                        flex: 1,
+                        minWidth: "0",
+                        textTransform: "none",
+                        borderColor: "rgb(211,221,238)",
+                        color: "rgb(66,103,178)",
+                        background: "rgb(211,221,238)",
+                        height: 40,
+                        fontSize: 20,
+                        "&:hover": {
+                          background: "rgb(66,103,178)",
+                          color: "rgb(211,221,238)",
+                        },
+                      }}
+                    >
+                      <FaSquareFacebook />
+                    </Button>
+
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        flex: 1,
+                        minWidth: "0",
+                        textTransform: "none",
+                        borderColor: "rgb(204,232,250)",
+                        color: "rgb(29,161,242)",
+                        background: "rgb(204,232,250)",
+                        height: 40,
+                        fontSize: 20,
+                        "&:hover": {
+                          background: "rgb(29,161,242)",
+                          color: "rgb(204,232,250)",
+                        },
+                      }}
+                    >
+                      <FaTwitterSquare />
+                    </Button>
+
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        flex: 1,
+                        minWidth: "0",
+                        textTransform: "none",
+                        borderColor: "rgb(220,234,241)",
+                        color: "rgb(14,118,168)",
+                        background: "rgb(220,234,241)",
+                        height: 40,
+                        fontSize: 20,
+                        "&:hover": {
+                          background: "rgb(14,118,168)",
+                          color: "rgb(220,234,241)",
+                        },
+                      }}
+                    >
+                      <FaLinkedin />
+                    </Button>
+                  </Box>
+
+                  {/* Message Button */}
+                  <Button
+                    startIcon={<ChatBubbleOutlineIcon />}
+                    fullWidth
+                    sx={{
+                      mt: 2,
+                      textTransform: "none",
+                      border: "1px solid #3b82f6",
+                      color: "#3b82f6",
+                      borderRadius: 2,
+                      "&:hover": {
+                        background: "#eff6ff",
+                      },
+                    }}
+                  >
+                    Message
+                  </Button>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+
+        {/* Pagination */}
+        <Box
+          sx={{
+            mt: 4,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: 2,
+          }}
+        >
+          <Pagination count={10} size="small" />
+          <Select size="small" value={10}>
+            <MenuItem value={5}>5 Rows</MenuItem>
+            <MenuItem value={10}>10 Rows</MenuItem>
+            <MenuItem value={20}>20 Rows</MenuItem>
+          </Select>
+        </Box>
+      </Box>
+    </Main>
+  );
+}

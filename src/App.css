@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+/* body.dark-mode {
+  background-color: #121212;
+  color: white;
+} */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.slick-slide > div {
+  margin: 0 5px;
+}
+
+/* .slick-list {
+  margin: 0 -8px;
+} */
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.custom-link {
+  color: rgb(93,65,121);
+  text-decoration: none;
+
+}
+
+.custom-link:hover {
+  color: rgb(42,143,231);
+}
+.slider{
+  width:80%;
+  height:100px;
+  margin: auto;
+  border:1px solid red
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* This is the most important line for height issues */
+  min-height: auto; 
+  height: auto; 
+  overflow-y: auto;
+  overflow-x: hidden;
+}
