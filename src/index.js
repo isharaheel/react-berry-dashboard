@@ -11,7 +11,7 @@ root.render(<App />);
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/berry-react-dashboard">
     <App />
   </BrowserRouter>
 );

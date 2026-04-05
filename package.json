@@ -33,12 +33,14 @@
     "styled-components": "^6.1.19",
     "web-vitals": "^2.1.4"
   },
- "scripts": {
-  "start": "react-scripts --max-old-space-size=4096 start",
-  "build": "react-scripts --max-old-space-size=4096 build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-},
+  "scripts": {
+    "start": "react-scripts --max-old-space-size=4096 start",
+    "build": "react-scripts --max-old-space-size=4096 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -56,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
