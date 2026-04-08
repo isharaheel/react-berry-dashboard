@@ -198,12 +198,12 @@ const [openDefault, setOpenDefault] = React.useState(false);
               <MenuIcon />
             </IconButton>
 
-            <IconButton
+            {/* <IconButton
               sx={{ display: { xs: 'flex', md: 'none' }, color: 'rgb(143,114,201)', backgroundColor: 'rgb(237,231,246)' }}
               onClick={() => setMobileSearchOpen(true)}
             >
               <SearchIcon />
-            </IconButton>
+            </IconButton> */}
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', flexGrow: 1, maxWidth: 400 }}>
               <Search>
@@ -2086,7 +2086,7 @@ const [openDefault, setOpenDefault] = React.useState(false);
       
       
 
-      {mobileSearchOpen && (
+      {/* {mobileSearchOpen && (
         <Box
           sx={{
             position: 'fixed',
@@ -2122,7 +2122,7 @@ const [openDefault, setOpenDefault] = React.useState(false);
             <CloseIcon />
           </IconButton>
         </Box>
-      )}
+      )} */}
 
       {mobileDrawerOpen && (
         <Box
