@@ -155,7 +155,7 @@ const toggleTheme = () => setMode(prev => (prev === "light" ? "dark" : "light"))
         </Route>
 
         {/* CHAT */}
-        <Route
+        {/* <Route
           path="/chat"
           element={
             <ProtectedRoute>
@@ -164,7 +164,7 @@ const toggleTheme = () => setMode(prev => (prev === "light" ? "dark" : "light"))
               </ResponsiveDrawerNavbar>
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         {/* CONTACT */}
         <Route

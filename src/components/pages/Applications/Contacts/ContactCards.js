@@ -90,7 +90,7 @@ H: [
     phone: "474-215-1871",
     location: "Andorra",
     avatar: "/images/follow-6.png",
-  },
+  }
   
 ],
 W: [

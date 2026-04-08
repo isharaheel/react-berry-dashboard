@@ -50,7 +50,7 @@ export default function LoginPage (){
         }}
       >
         <Box sx={{ mb: 2 }}>
-          <img src="/images/logo.png" alt="Berry Logo" style={{ height: 40 }} />
+          <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="Logo" style={{ height: 40 }} />
         </Box>
 
         <Typography variant="h6" sx={{ fontWeight: 600, color: "#5F2EEA", mb: 1 }}>
